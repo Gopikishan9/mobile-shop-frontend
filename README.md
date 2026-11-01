@@ -1,16 +1,106 @@
-# React + Vite
+# Mobile Shop Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mobile shop e-commerce frontend built with **React + Vite**. It talks to a Spring Boot REST API with JWT authentication and has a separate admin area for managing products.
 
-Currently, two official plugins are available:
+**Backend repo:** [mobile-shop-backend](https://github.com/Gopikishan9/mobile-shop-backend)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Home page with image slider, categories and offers
+- Product listing, categorized products and product details with specifications
+- Search, Offers, About and Contact pages
+- 404 page for unknown routes
+- Auth context for login state, plus CSRF and API service helpers
+- Admin dashboard for product management
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Status
 
-## Expanding the ESLint configuration
+| Area | Status |
+|------|--------|
+| Home, Products, Categorized Products, Product Details | Done |
+| Login / authentication integration | Done |
+| Admin dashboard integration | Done |
+| Deployment | Planned |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React
+- Vite
+- React Router
+- Context API
+- Plain CSS
+
+## Project Structure
+
+```
+src/
+├── admin/        # Admin dashboard
+├── auth/         # Login
+├── components/   # Navbar, Footer, ProductCard, CategoryCard, OfferCard, Search, ...
+├── pages/        # Home, Products, CategorizedProducts, ProductDetails, Offers, About, Contact, PageNotFound
+├── services/     # AuthContext, api.js, csrf.js
+├── user/         # User page
+├── App.jsx
+└── main.jsx
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18 or higher
+- The [backend](https://github.com/Gopikishan9/mobile-shop-backend) running locally on port 8080
+
+### Installation
+
+```bash
+git clone https://github.com/Gopikishan9/mobile-shop-frontend.git
+cd mobile-shop-frontend
+npm install
+cp .env.example .env
+npm run dev
+```
+
+On Windows PowerShell, use `copy .env.example .env` instead of `cp`.
+
+The app runs at `http://localhost:5173` by default.
+
+### Environment Variables
+
+Create a `.env` file in the project root:
+
+```
+VITE_API_URL=http://localhost:8080
+```
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_URL` | Base URL of the Mobile Shop backend API |
+
+## Available Scripts
+
+| Command | What it does |
+|---------|--------------|
+| `npm run dev` | Start the dev server |
+| `npm run build` | Create a production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
+
+## Screenshots
+
+_Coming soon._
+
+## Roadmap
+
+- [ ] Finish login authentication integration
+- [ ] Integrate admin dashboard with product APIs
+- [ ] Deploy backend and frontend
+
+## Author
+
+
+
+**Gopikishan Rawat**
+
+GitHub: [@gopikishan9](https://github.com/gopikishan9)
+
